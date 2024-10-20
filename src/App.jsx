@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom"
+import Navbar from "./components/shared/Navbar"
+import Footer from "./components/shared/Footer"
 
 function App() {
     return (
         <>
             <div className="h-screen">
-                <h1>This is the header part</h1>
+                <Navbar />
                 <Outlet />
-                <footer>
-                    <h3>This is the footer part</h3>
-                </footer>
+                <Footer />
             </div>
         </>
     )
