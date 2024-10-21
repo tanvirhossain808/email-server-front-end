@@ -48,7 +48,7 @@ const SmtpForm = () => {
                 setLoading(false)
                 throw new Error("Something went wrong")
             }
-            // setInputValue(initialSmtpInputFields)
+            setInputValue(initialSmtpInputFields)
             toast.success(
                 "SMTP configuration created successfully",
                 toastifySuccess

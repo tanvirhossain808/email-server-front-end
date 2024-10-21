@@ -10,6 +10,7 @@ const FormField = ({
     setInputValue,
     inputValue,
     loading,
+    btnText = "smtp",
 }) => {
     return (
         <div className="text-white h-full flex items-center justify-center">
@@ -29,28 +30,47 @@ const FormField = ({
                             >
                                 {label}
                             </label>
-                            <input
-                                required
-                                name={name}
-                                id={id}
-                                type={type}
-                                value={inputValue[name]}
-                                placeholder={name}
-                                onChange={(e) =>
-                                    inputHandler(
-                                        e,
-                                        setInputValue,
-                                        inputValue,
-                                        name
-                                    )
-                                }
-                                className="mt-1 p-2 w-full border rounded-md focus:outline-none bg-black focus:ring-white"
-                            />
+                            {type === "textarea" ? (
+                                <textarea
+                                    className="bg-black border-2 border-white outline-none w-full"
+                                    rows={6}
+                                    name={name}
+                                    id=""
+                                    placeholder={name}
+                                    onChange={(e) =>
+                                        inputHandler(
+                                            e,
+                                            setInputValue,
+                                            inputValue,
+                                            name
+                                        )
+                                    }
+                                    value={inputValue[name]}
+                                ></textarea>
+                            ) : (
+                                <input
+                                    required
+                                    name={name}
+                                    id={id}
+                                    type={type}
+                                    value={inputValue[name]}
+                                    placeholder={name}
+                                    onChange={(e) =>
+                                        inputHandler(
+                                            e,
+                                            setInputValue,
+                                            inputValue,
+                                            name
+                                        )
+                                    }
+                                    className="mt-1 p-2 w-full border rounded-md focus:outline-none bg-black focus:ring-white"
+                                />
+                            )}
                         </div>
                     )
                 )}
                 <div className="flex items-center justify-center">
-                    <FormBtn loading={loading} btnText={"smtp"} />
+                    <FormBtn loading={loading} btnText={btnText} />
                 </div>
             </form>
         </div>

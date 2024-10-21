@@ -34,6 +34,15 @@ export const smtpInputFields = [
     { name: "name", type: "string" },
     { name: "user", type: "string" },
 ]
+export const emailInputFields = [
+    { name: "name", type: "string" },
+    { name: "email", type: "string" },
+]
+export const sendEmailInfoFields = [
+    { name: "subject", type: "string" },
+    { name: "name", type: "string" },
+    { name: "body", type: "textarea" },
+]
 export const toastifyError = {
     position: "bottom-center",
     autoClose: 5000,
