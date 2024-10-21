@@ -18,10 +18,13 @@ const FormField = ({
                 className=" w-1/4 flex flex-col gap-2 ]"
             >
                 {inputFields?.map(
-                    ({ id, label, type, placeholder, className, name }) => (
-                        <div key={id}>
+                    (
+                        { id, label, type, placeholder, className, name },
+                        index
+                    ) => (
+                        <div key={index}>
                             <label
-                                htmlFor={id}
+                                // htmlFor={id}
                                 className="block text-sm font-medium"
                             >
                                 {label}

@@ -9,10 +9,14 @@ import {
 } from "../constant/exportsArr"
 import axios from "axios"
 import { restServerApi } from "../constant/api"
-import { Bounce, toast } from "react-toastify"
+import { toast } from "react-toastify"
+import ListsBtn from "./shared/ListsBtn"
+import SmtpLists from "./SmtpLists"
 const SmtpForm = () => {
     const [inputValue, setInputValue] = useState(initialSmtpInputFields)
     const [loading, setLoading] = useState(false)
+    const [seeLists, setSeeLists] = useState(false)
+
     const [error, setError] = useState({
         err: false,
         message: "",
@@ -44,7 +48,7 @@ const SmtpForm = () => {
                 setLoading(false)
                 throw new Error("Something went wrong")
             }
-            setInputValue(initialSmtpInputFields)
+            // setInputValue(initialSmtpInputFields)
             toast.success(
                 "SMTP configuration created successfully",
                 toastifySuccess
@@ -59,18 +63,29 @@ const SmtpForm = () => {
         }
     }
 
+    if (seeLists) {
+        return (
+            <>
+                <SmtpLists {...{ seeLists, setSeeLists }} />
+            </>
+        )
+    }
+
     return (
-        <div className="w-full h-[calc(100vh - 60px)]">
-            <FormField
-                {...{
-                    submitHandler,
-                    inputValue,
-                    setInputValue,
-                    inputFields: smtpInputFields,
-                    loading,
-                }}
-            />
-        </div>
+        <>
+            <div className="w-full h-[calc(100vh - 60px)]">
+                <ListsBtn setSeeLists={setSeeLists} text={"See stmp lists"} />
+                <FormField
+                    {...{
+                        submitHandler,
+                        inputValue,
+                        setInputValue,
+                        inputFields: smtpInputFields,
+                        loading,
+                    }}
+                />
+            </div>
+        </>
     )
 }
 
