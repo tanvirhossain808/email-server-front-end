@@ -1,64 +1,35 @@
 import axios from "axios"
 import { useState } from "react"
 import { restServerApi } from "../../constant/api"
+import { useNavigate } from "react-router-dom"
 const AuthForm = () => {
     const [isLogin, setIsLogin] = useState(true) // Toggle between Login and Signup
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         if (isLogin) {
-            // console.log("Logging in with", { email, password })
-            // try {
-            //     const res = await axios.get(
-            //         // "http://localhost:8000/uganda",
-            //         "https://smtp-server-rho.vercel.app/uganda",
-            //         // {
-            //         //     email,
-            //         //     password,
-            //         // },
-            //         { withCredentials: true }
-            //     )
-            //     // const resule = await res.JSON()
-            //     console.log(res)
-            //     console.log(res?.data?.token)
-            //     // document.cookie = `token=${res.data.token}`
-            // }
-
             try {
-                const res = await axios.get(
-                    "https://smtp-server-rho.vercel.app/uganda",
-                    // "http://localhost:8000/uganda",
-
-                    // {
-                    //     email: email, // Add your email here
-                    //     password: password, // Add your password here
-                    // },
+                const res = await axios.post(
+                    restServerApi + "/login",
                     {
-                        withCredentials: true,
-                    }
+                        email,
+                        password,
+                    },
+                    { withCredentials: true }
                 )
-                // try {
-                //     const res = await axios.post(
-                //         // "https://smtp-server-rho.vercel.app/login",
-                //         "http://localhost:8000/login",
-
-                //         {
-                //             email: email, // Add your email here
-                //             password: password, // Add your password here
-                //         },
-                //         {
-                //             withCredentials: true,
-                //         }
-                //     )
-                console.log(res.data)
+                const token = res.data.token
+                if (token) {
+                    navigate("/")
+                }
+                console.log(res.data.token, res)
             } catch (error) {
                 console.log(error)
             }
         } else {
             console.log("Signing up with", { email, password })
-            // Add signup logic here
         }
     }
 
