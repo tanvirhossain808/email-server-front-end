@@ -50,7 +50,7 @@ const FormField = ({
                     )
                 )}
                 <div className="flex items-center justify-center">
-                    <FormBtn loading={loading} />
+                    <FormBtn loading={loading} btnText={"smtp"} />
                 </div>
             </form>
         </div>

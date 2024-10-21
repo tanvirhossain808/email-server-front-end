@@ -13,7 +13,7 @@ export const homeSidebarList = [
         name: "create email list",
     },
     {
-        name: "create email info",
+        name: "send email info",
     },
     {
         name: "create camping",
@@ -23,7 +23,7 @@ export const homeSidebarList = [
 export const mailOptionsComponentsLists = {
     ["create smtp"]: SmtpForm,
     ["create camping"]: Camping,
-    ["create email info"]: EmailInfo,
+    ["send email info"]: EmailInfo,
     ["create email list"]: EmailLists,
 }
 
@@ -59,6 +59,13 @@ export const toastifySuccess = {
 }
 
 export const initialSmtpInputFields = {
+    host: "",
+    port: "",
+    password: "",
+    name: "",
+    user: "",
+}
+export const smtpUpdaingInitialInputFields = {
     host: "",
     port: "",
     password: "",
