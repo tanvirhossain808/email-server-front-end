@@ -8,7 +8,7 @@ import { restServerApi } from "../constant/api"
 import { toast } from "react-toastify"
 import { toastifyError } from "../constant/exportsArr"
 import deleteHandler from "../utils/delets"
-import LoadingState from "./shared/loadingState"
+import LoadingState from "./shared/k/LoadingState"
 import UpdateModal from "./shared/UpdateModal"
 
 const SmtpLists = ({ seeLists, setSeeLists }) => {
