@@ -3,7 +3,7 @@
 import axios from "axios"
 import { useState } from "react"
 import { restServerApi } from "../../constant/api"
-import LoadingState from "./loadingState"
+import LoadingState from "./LoadingState"
 import { toast } from "react-toastify"
 import { toastifyError, toastifySuccess } from "../../constant/exportsArr"
 const SwitchingAnimation = ({ campingStatus, _id, inputValue }) => {

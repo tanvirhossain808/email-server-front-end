@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from "react"
-import LoadingState from "./loadingState"
+import LoadingState from "./LoadingState"
 import { toast } from "react-toastify"
 import { toastifyError } from "../../constant/exportsArr"
 import axios from "axios"

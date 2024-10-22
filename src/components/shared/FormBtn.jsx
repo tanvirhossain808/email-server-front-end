@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import LoadingState from "./loadingState"
+
+import LoadingState from "./LoadingState"
 
 const FormBtn = ({ loading, btnText }) => {
     return (
