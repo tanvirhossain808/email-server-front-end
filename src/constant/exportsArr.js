@@ -3,6 +3,7 @@ import Camping from "../components/Camping"
 import EmailInfo from "../components/EmailInfo"
 import EmailLists from "../components/EmailLists"
 import SmtpForm from "../components/SmtpForm"
+import ReplyEmail from "../components/ReplyEmail"
 
 export const homeSidebarList = [
     {
@@ -18,6 +19,9 @@ export const homeSidebarList = [
     {
         name: "create camping",
     },
+    {
+        name: "see reply",
+    },
 ]
 
 export const mailOptionsComponentsLists = {
@@ -25,6 +29,7 @@ export const mailOptionsComponentsLists = {
     ["create camping"]: Camping,
     ["send email info"]: EmailInfo,
     ["create email list"]: EmailLists,
+    ["see reply"]: ReplyEmail,
 }
 
 export const smtpInputFields = [

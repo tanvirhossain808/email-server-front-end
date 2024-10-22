@@ -53,9 +53,7 @@ const SwitchingAnimation = ({ campingStatus, _id, inputValue }) => {
                         className={`absolute left-1 bg-white w-8 h-8 rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${
                             isOn ? "translate-x-10" : "translate-x-0"
                         }`}
-                    >
-                        fd
-                    </span>
+                    ></span>
                 ) : (
                     <LoadingState />
                 )}

@@ -51,6 +51,7 @@ const ModifyingCamping = ({ setModifyCampings, inputValue }) => {
                             key={camp._id}
                             camp={camp}
                             inputValue={inputValue}
+                            campingsData={campingsData}
                         />
                     ))}
                 </div>
