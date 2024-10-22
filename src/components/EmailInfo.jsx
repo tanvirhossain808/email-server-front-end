@@ -19,7 +19,6 @@ const EmailInfo = () => {
     // const [seeLists, setSeeLists] = useState(false)
     const [loading, setLoading] = useState(false)
     const [inputValue, setInputValue] = useState(initialInputValue)
-    console.log(inputValue)
     const submitHandler = async (e) => {
         e.preventDefault()
         setLoading(true)

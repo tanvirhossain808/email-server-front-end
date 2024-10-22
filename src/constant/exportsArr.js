@@ -43,6 +43,18 @@ export const sendEmailInfoFields = [
     { name: "name", type: "string" },
     { name: "body", type: "textarea" },
 ]
+export const campingFields = [
+    // { name: "emailListId", type: "string" },
+    // {
+    //     name: "sendEmailId",
+    //     type: "string",
+    // },
+    {
+        name: "name",
+        type: "string",
+    },
+]
+
 export const toastifyError = {
     position: "bottom-center",
     autoClose: 5000,

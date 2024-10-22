@@ -19,7 +19,7 @@ const AuthWrapper = ({ children, isAuthPage, path }) => {
             const token = res.data.token
             return !!token
         } catch (error) {
-            console.log(error.message)
+            console.log(error)
             return false
         }
     }

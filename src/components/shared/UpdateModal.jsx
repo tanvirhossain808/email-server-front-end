@@ -1,6 +1,5 @@
 import { smtpUpdaingInitialInputFields } from "../../constant/exportsArr"
 import UpdateForm from "./UpdateForm"
-import UpdatingForm from "./UpdatingForm"
 
 /* eslint-disable react/prop-types */
 const UpdateModal = ({
