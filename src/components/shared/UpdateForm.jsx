@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from "react"
-import LoadingState from "./LoadingState"
 import { toast } from "react-toastify"
 import { toastifyError } from "../../constant/exportsArr"
 import axios from "axios"
 import { restServerApi } from "../../constant/api"
+import LoadingState from "./LoadingState"
 
 const UpdateForm = ({ initialInput, setUpdatingId, getUpdateSmtpLists }) => {
     const [inputValue, setInputValue] = useState(initialInput)
