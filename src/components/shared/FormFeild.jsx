@@ -2,7 +2,6 @@
 
 import inputHandler from "../../utils/inputHandler"
 import FormBtn from "./FormBtn"
-import LoadingState from "./loadingState"
 /* eslint-disable react/prop-types */
 const FormField = ({
     submitHandler,
