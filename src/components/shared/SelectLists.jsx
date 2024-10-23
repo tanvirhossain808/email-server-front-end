@@ -76,6 +76,7 @@ const SelectLists = ({ route, setInputValue }) => {
                         }
                     }}
                 >
+                    <option value="Select one">Select one</option>
                     {options.map((option, i) => {
                         return (
                             <option

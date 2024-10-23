@@ -52,7 +52,7 @@ const Camping = () => {
                 restServerApi + "/mails/set/camping",
                 {
                     emailListId: inputValue.emailListId,
-                    sendEmailId: inputValue.sendEmailId,
+                    emailBody: inputValue.sendEmailId,
                     name: inputValue.name,
                     smtpId: inputValue.smtpId,
                 },

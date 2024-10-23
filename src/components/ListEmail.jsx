@@ -46,10 +46,10 @@ const ListEmail = ({ _id, name, emails, replies, sent }) => {
                         }`}
                     ></div>
                     <button
-                        className="bg-yellow-500 hover:bg-yellow-300 text-black w-20 rounded"
+                        className="bg-yellow-500 hover:bg-yellow-300 text-black w-[100px] rounded"
                         onClick={handleShowLists}
                     >
-                        {showLists ? "Hide emails" : "Show emails"}
+                        {showLists ? "Hide emails" : "Show list"}
                     </button>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-2">
@@ -60,7 +60,7 @@ const ListEmail = ({ _id, name, emails, replies, sent }) => {
                         }`}
                     ></div>
                     <button
-                        className="bg-yellow-500 hover:bg-yellow-300 text-black w-20 rounded"
+                        className="bg-yellow-500 hover:bg-yellow-300 text-black w-[100px] rounded"
                         onClick={handleShowReplies}
                     >
                         {showReplies ? "Hide replies" : "Show replies"}
