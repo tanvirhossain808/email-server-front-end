@@ -27,7 +27,7 @@ export const homeSidebarList = [
 const Sidebar = ({ activeSidebar, setActiveSidebar }) => {
     return (
         <div
-            className={`max-w-[400px] flex flex-col justify-evenly items-center gap-4 p-2 top-0 sticky border-r-2 border-white 400 h-[calc(100vh-40px)] cursor-pointer`}
+            className={`max-w-[400px] flex flex-col justify-evenly h-[calc(100vh-60px)] items-center gap-4 p-2 border-r-2 border-white 400 cursor-pointer`}
         >
             {homeSidebarList.map((sidebar, index) => (
                 <p

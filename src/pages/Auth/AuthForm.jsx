@@ -13,7 +13,7 @@ const AuthForm = () => {
         if (isLogin) {
             try {
                 const res = await axios.post(
-                    restServerApi + "/login",
+                    restServerApi + "/logins",
                     // "http://localhost:8000/" + "logins",
                     {
                         email,
@@ -30,6 +30,26 @@ const AuthForm = () => {
                 console.log(error)
             }
         } else {
+            try {
+                const res = await axios.post(
+                    restServerApi + "/signup",
+                    // "http://localhost:8000/" + "logins",
+                    {
+                        email,
+                        password,
+                    },
+                    {
+                        withCredentials: true,
+                    }
+                )
+                const token = res.data.token
+                if (token) {
+                    navigate("/")
+                }
+            } catch (error) {
+                console.log(error)
+            }
+            // signup
             console.log("Signing up with", { email, password })
         }
     }

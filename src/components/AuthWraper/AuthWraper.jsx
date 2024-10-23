@@ -44,7 +44,7 @@ const AuthWrapper = ({ children, isAuthPage, path }) => {
         return <div>Loading...</div>
     }
 
-    return <>{children}</>
+    return <div className="w-full">{children}</div>
 }
 
 export default AuthWrapper

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import FormField from "./shared/FormFeild"
 import ListsBtn from "./shared/ListsBtn"
 import {
@@ -10,9 +10,11 @@ import {
 import { toast } from "react-toastify"
 import axios from "axios"
 import { restServerApi } from "../constant/api"
+import FormBtn from "./shared/FormBtn"
+import ListEmail from "./ListEmail"
 const initialInputValue = {
     name: "",
-    email: [],
+    email: "",
 }
 const EmailLists = () => {
     const [seeLists, setSeeLists] = useState(false)
@@ -50,19 +52,62 @@ const EmailLists = () => {
             return
         }
     }
+    const fetchEmailLists = async () => {
+        try {
+            const res = await axios.get(restServerApi + "/emaillists", {
+                withCredentials: true,
+            })
+            console.log(res.data)
+            setSeeLists(res.data.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    useEffect(() => {
+        fetchEmailLists()
+    }, [])
+    console.log(seeLists)
     return (
-        <div className="w-full h-[calc(100vh - 60px)]">
-            {/* <ListsBtn setSeeLists={setSeeLists} text={"See Email lists"} /> */}
-            <FormField
-                {...{
-                    submitHandler,
-                    inputValue,
-                    setInputValue,
-                    inputFields: emailInputFields,
-                    loading,
-                    btnText: "email lists",
-                }}
-            />
+        <div className="w-full flex mt-10">
+            <form
+                className="flex basis-[50%] flex-col gap-2 items-center"
+                onSubmit={submitHandler}
+            >
+                <input
+                    type="text"
+                    name="name"
+                    className="bg-black border-[1px] rounded border-white outline-none w-1/2"
+                    placeholder="Enter email list name"
+                    onChange={(e) =>
+                        setInputValue({ ...inputValue, name: e.target.value })
+                    }
+                    value={inputValue.name}
+                />
+                <textarea
+                    name="email"
+                    id=""
+                    placeholder="Please enter coma speared email lists"
+                    className="bg-black outline-none border-[1px] w-1/2 rounded border-white"
+                    rows={6}
+                    value={inputValue.email}
+                    onChange={(e) =>
+                        setInputValue({ ...inputValue, email: e.target.value })
+                    }
+                ></textarea>
+                <div className="flex items-center">
+                    <FormBtn loading={loading} btnText={"Create email lists"} />
+                </div>
+            </form>
+            <div>
+                <h2>Email lists</h2>
+                {seeLists.length > 0 ? (
+                    seeLists.map((list, index) => (
+                        <ListEmail key={list._id} {...list} />
+                    ))
+                ) : (
+                    <div>No email lists found</div>
+                )}
+            </div>
         </div>
     )
 }

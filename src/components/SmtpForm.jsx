@@ -73,7 +73,7 @@ const SmtpForm = () => {
 
     return (
         <>
-            <div className="w-full h-[calc(100vh - 60px)]">
+            <div className="w-full">
                 <ListsBtn setSeeLists={setSeeLists} text={"See stmp lists"} />
                 <FormField
                     {...{

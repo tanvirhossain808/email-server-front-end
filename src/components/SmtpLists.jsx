@@ -48,7 +48,7 @@ const SmtpLists = ({ seeLists, setSeeLists }) => {
                     getSmtpLists={getSmtpLists}
                 />
             )}
-            <div className="w-full h-[calc(100vh - 60px)]">
+            <div className="w-full">
                 <ListsBtn setSeeLists={setSeeLists} text={"Create smtp"} />
                 <div className="flex flex-col gap-4">
                     {smtpLists.length > 0 ? (

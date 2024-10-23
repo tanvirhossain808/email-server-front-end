@@ -81,7 +81,7 @@ const Camping = () => {
                     inputValue={inputValue}
                 />
             ) : (
-                <div className="w-full h-[calc(100vh - 60px)]">
+                <div className="w-full">
                     {selector === "emailList" && (
                         <SelectionModal
                             {...{

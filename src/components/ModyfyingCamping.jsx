@@ -36,7 +36,7 @@ const ModifyingCamping = ({ setModifyCampings, inputValue }) => {
     console.log(campings)
     return (
         <>
-            <div className="w-full h-[calc(100vh - 60px)]">
+            <div className="w-full">
                 <div className="w-full flex justify-center mt-5">
                     <button
                         className=" p-2 rounded bg-green-500 hover:bg-green-300"

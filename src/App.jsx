@@ -8,8 +8,10 @@ function App() {
     return (
         <>
             <ToastContainer />
-            <div className="h-screen overflow-y-scroll">
-                <Navbar />
+            <div className="h-screen">
+                <div className="h-[60px] w-full top-0 sticky">
+                    <Navbar />
+                </div>
                 <Outlet />
                 {/* <Footer /> */}
             </div>

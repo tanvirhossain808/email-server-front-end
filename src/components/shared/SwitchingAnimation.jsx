@@ -24,7 +24,11 @@ const SwitchingAnimation = ({ campingStatus, _id, inputValue }) => {
                 )
             } else {
                 res = await axios.post(
-                    restServerApi + `/mails/startcamping/false/${_id}`
+                    restServerApi + `/mails/offcamping/false/${_id}`,
+                    {},
+                    {
+                        withCredentials: true,
+                    }
                 )
             }
             if (res.data.success !== true) {
