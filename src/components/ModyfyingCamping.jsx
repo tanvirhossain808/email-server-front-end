@@ -36,14 +36,15 @@ const ModifyingCamping = ({ setModifyCampings, inputValue }) => {
     console.log(campings)
     return (
         <>
-            <div className="w-full">
+            <button
+                className=" p-2 rounded bg-green-500 hover:bg-green-300"
+                onClick={() => setModifyCampings(false)}
+            >
+                Create a new camping
+            </button>
+            {/*  <div className="w-full">
                 <div className="w-full flex justify-center mt-5">
-                    <button
-                        className=" p-2 rounded bg-green-500 hover:bg-green-300"
-                        onClick={() => setModifyCampings(false)}
-                    >
-                        Create a new camping
-                    </button>
+                   
                 </div>
                 <div className="flex flex-col">
                     {campings.map((camp) => (
@@ -55,7 +56,8 @@ const ModifyingCamping = ({ setModifyCampings, inputValue }) => {
                         />
                     ))}
                 </div>
-            </div>
+            </div> */}
+            <h2 className="text-center text-[30px]">Under mainating break</h2>
         </>
     )
 }

@@ -39,6 +39,7 @@ const EmailLists = () => {
             if (res.data.success !== true) {
                 throw new Error("something went wrong")
             }
+            await fetchEmailLists()
             toast.success(
                 "successfully create a new email list",
                 toastifySuccess
