@@ -13,7 +13,7 @@ const AuthForm = () => {
         if (isLogin) {
             try {
                 const res = await axios.post(
-                    restServerApi + "/logins",
+                    restServerApi + "/login",
                     // "http://localhost:8000/" + "logins",
                     {
                         email,
